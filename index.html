@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E S T O I C S</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // CONFIGURACIÓ DE LES TEVES VARIABLES
+        const FORM_ID = "1FAIpQLScLCcVzZvp5f-2fWiC3g65QW_zl0O3PpRcZbmpMFojIy27bAQ";
+        const SHEETS_ID = "1E3I4OtOQGujvPEfcezXyeMtk5Y1uI4QVOJ2-3F9AEM8";
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#d4af37',
+                            hover: '#aa8c2c',
+                            light: 'rgba(212, 175, 55, 0.15)'
+                        }
+                    }
+                }
+            }
+        }
+
+        // Injecció dinàmica d'enllaços al carregar la pàgina
+        window.addEventListener('DOMContentLoaded', () => {
+            const formBtn = document.getElementById('google-form-btn');
+            if (formBtn) {
+                formBtn.href = `https://docs.google.com/forms/d/e/${FORM_ID}/viewform`;
+            }
+            const sheetsIframe = document.getElementById('sheets-iframe');
+            if (sheetsIframe) {
+                sheetsIframe.src = `https://docs.google.com/spreadsheets/d/${SHEETS_ID}/`;
+            }
+        });
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#121212] text-gray-100 font-sans antialiased pt-20">
+
+    <!-- Imatge de fons difuminada i transparent -->
+    <div class="fixed inset-0 z-[-1] bg-[url('static/img/background.png')] bg-cover bg-center opacity-15 blur-md"></div>
+
+    <!-- NAVBAR: Scroll horitzontal amagat en mòbils -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#121212]/85 backdrop-blur-md border-b border-gold">
+        <nav class="max-w-4xl mx-auto px-4 py-4">
+            <ul class="flex justify-start sm:justify-center items-center gap-6 overflow-x-auto whitespace-nowrap no-scrollbar text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <li><a href="#tips" class="hover:text-gold transition-colors">Els Tips</a></li>
+                <li><a href="#paraboles" class="hover:text-gold transition-colors">Les Paràboles</a></li>
+                <li><a href="#noticies" class="hover:text-gold transition-colors">Darreres Notícies</a></li>
+                <li><a href="#rebost" class="hover:text-gold transition-colors">Enviaments</a></li>
+                <li><a href="#propostes" class="hover:text-gold transition-colors">Enviar Tip</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDOR PRINCIPAL -->
+    <main class="max-w-3xl mx-auto px-6 py-8">
+        
+        <!-- HERO SECTION -->
+        <header class="text-center py-12 sm:py-16">
+            <h1 class="text-3xl sm:text-5xl font-black text-gold uppercase tracking-tight mb-4">E S T O I C S</h1>
+            <p class="text-sm sm:text-lg italic text-gray-400">"només per ús intern del grup d'elit, no compartir amb els de fora"</p>
+        </header>
+
+        <!-- SEPARADOR -->
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent my-10"></div>
+
+        <!-- SECCIÓ 1: ELS TIPS -->
+        <section id="tips" class="scroll-mt-24">
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">Els Tips</h2>
+            
+            <div class="grid grid-cols-1 gap-4">
+                
+                <!-- Tip 1 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#1:</span> el que és fàcil de fer és fàcil de no fer</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 2 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#2:</span> deixar de ser un rata</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#3:</span> el grup d'èlit és una pinya, un equip, sense diferències entre companys</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#4:</span> pujar de nivell implica un canvi de mentalitat</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 5 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#5:</span> bon rotllo i a pagar</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 6 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#6:</span> minut de silenci</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 7 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#7:</span> calma davant l'adversitat i creure en el líder</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 8 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#8:</span> fer el que digui el líder suprem</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 9 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#9:</span> no passejar al sol per evitar cops de calor</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 10 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#10:</span> siguem responsables i sortim de la mediocritat</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 11 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#11:</span> ser entrenables pero no submisos</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 12 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#12:</span> no distractors</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 13 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#13:</span> a más la agarras...</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 14 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#14:</span> tot té preu</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 15 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#15:</span> la Marta ja no existeix</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 16 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#16:</span> quan tinguis un dubte, has de prendre el camí difícil</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 17 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#17:</span> Dar cera, pulir cera AKA repetir repetir repetir</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 18 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#18:</span> Be water my friend AKA porteu-ho tot al vostre terreny</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 19 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#19:</span> El límit el poses tu</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 20 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#20:</span> la queixa és pobresa, no ens podem queixar, els gats bruts es renten a casa</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 21 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#21:</span> Si estàs millor que ahir has pujat de nivell</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 22 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#22:</span> negativitat zero prohibit divieto</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 23 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#23:</span> el que algo vol algo li costa</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 24 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#24:</span> no es pot ser mentor i mentat</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 25 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#25:</span> vigila el llenguatge</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 26 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#26:</span> Seguim així i demà millor!</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 27 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#27:</span> el millor homenatge al líder és la millora del grup</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 28 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#28:</span> Heu de pensar molt amunt molt amunt molt amunt</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 29 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#29:</span> Som grans no mediocres</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 30 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#30:</span> mediocre és el que medio cree i nosaltres creiem del todo</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 31 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#31:</span> si no pots dormir, has de meditar i visualitzar que el que vols aconseguir ja ho tens</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 32 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#32:</span> no es pot parar mai</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 33 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#33:</span> és important descansar</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 34 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#34:</span> hem d'estar oberts de ment i no tancar-nos a la programació que tenim davant</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 35 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#35:</span> tot arribarà</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 36 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#36:</span> el que la ment creu ho pot crear</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 37 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#37:</span> només visualitzant no s'aconsegueixen les coses, si no actuem no prosperarem</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 38 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#38:</span> amb diners es poden fer moltes coses: si ets dolent faràs coses dolentes i si ets bo, coses bones</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 39 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#39:</span> al fer la masturbació s'ha de pensar en positiu, és una energia positiva per assolir els reptes</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 40 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#40:</span> s'ha de deixar les drogues, l'alcohol i el fumar</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 41 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#41:</span> no compartir els coneixements ni els tips a la gent de fora, s'ha de demostrar amb fets, si no hi ha resultats millor callar</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 42 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#42:</span> hem de brillar amb llum pròpia</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 43 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#43:</span> millor ser treballador i tenir èxit, que un mediocre i un mort de gana</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 44 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#44:</span> viure de les loteries és de perdedors, ha de ser alguna cosa que puguem controlar</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 45 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#45:</span> un guanyador és un perdedor que s'ha aixecat i ho ha tornat a intentar una altra vegada</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 46 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                        <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#46:</span> allà on poses l'atenció, l'energia creix i amb això et converteixes</p>
+                    <!-- <p class="text-xs sm:text-sm text-gray-400 italic mt-2 pl-4 border-l-2 border-gray-600">Breu explicació secundària</p> -->
+                </div>
+
+                <!-- Tip 47 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#47:</span> només perd el que abandona, el joc no s'acaba fins que jo guanyi</p>
+                </div>
+
+                <!-- Tip 48 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#48:</span> mai miro enrere, sempre endavant</p>
+                </div>
+
+                <!-- Tip 49 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#49:</span> la vida no em passa a mi, passa per a mi</p>
+                </div>
+
+                <!-- Tip 50 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#50:</span> prenc acció, malgrat la por, els dubtes i la inseguretat</p>
+                </div>
+
+                <!-- Tip 51 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#51:</span> com que som estoics, la incomoditat és la meva zona de confort</p>
+                </div>
+
+                <!-- Tip 52 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#52:</span> és ara o mai, postergar és fracassar</p>
+                </div>
+
+                <!-- Tip 53 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#53:</span> jo soc del 1%</p>
+                </div>
+
+                <!-- Tip 54 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#54:</span> deixo de mentir-me i em dic la veritat</p>
+                </div>
+
+                <!-- Tip 55 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#55:</span> decideixo primer i busco la manera després</p>
+                </div>
+
+                <!-- Tip 56 -->
+                <div class="bg-white/5 border border-gold/10 p-4 rounded-xl backdrop-blur-sm">
+                    <p class="text-base font-medium"><span class="text-gold font-bold mr-1">#56:</span> els tips s'han d'interioritzar, fer-los un estil de vida nostra per pujar de nivell</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEPARADOR -->
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent my-12"></div>
+
+        <!-- SECCIÓ 2: LES PARÀBOLES -->
+        <section id="paraboles" class="scroll-mt-24 space-y-6">
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">Les Paràboles del Mentor</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">Els taurons japonesos</h3>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo tempor sem non bibendum. Sed nec metus vestibulum nisi rhoncus tincidunt. Mauris ultricies nibh odio, sed varius diam convallis vel. Mauris posuere ultricies lobortis. Integer nisl urna, congue eu lacinia nec, tempor vel ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed urna tortor, maximus vitae odio vel, luctus rhoncus nisl. Fusce blandit est et libero finibus malesuada. Phasellus euismod augue et erat tincidunt, sed porttitor sem placerat. Nulla rhoncus aliquam velit eu hendrerit. Proin justo tortor, aliquet vitae viverra non, gravida non augue. Cras euismod scelerisque metus, non commodo enim egestas nec.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Proin tortor turpis, tristique non consequat sit amet, consequat non nunc. Sed nec nisl vel urna maximus ornare eu non leo. Aliquam gravida malesuada nisi, at consequat tortor laoreet eget. Donec ut blandit velit. Ut in placerat risus. Duis commodo, orci in imperdiet finibus, purus ligula auctor ex, ac maximus diam turpis ac leo. Mauris mattis odio dui, in cursus nunc mollis sed. Sed non volutpat erat. Cras eu accumsan tellus, at suscipit lacus.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Nulla elementum, mi vel eleifend congue, quam tortor euismod nisl, interdum euismod leo tortor ac risus. Suspendisse lobortis elit orci, et blandit nulla scelerisque vitae. Cras pretium volutpat dignissim. Mauris nec vehicula arcu. Nunc feugiat magna ante. Etiam eget consequat nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae nisi quis nisi fermentum sollicitudin. Nam viverra fermentum sapien in aliquet. In vitae elit sed nulla efficitur bibendum ut ac magna. Nunc ex augue, hendrerit auctor tortor id, pulvinar commodo turpis.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">El làser i la llanterna</h3>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Sed laoreet augue eget facilisis ullamcorper. Praesent euismod lectus a quam pellentesque porttitor. Fusce ultricies ullamcorper enim non lacinia. Aenean consequat nisl leo. Vivamus porta venenatis risus, ac maximus libero dignissim sed. Fusce diam ante, porttitor in aliquam et, efficitur et nunc. Praesent dui massa, porttitor nec ipsum ut, rutrum iaculis lorem. Cras consectetur tincidunt erat, quis efficitur lacus rutrum ut. Aenean massa sem, pharetra et viverra id, vestibulum ut libero. Aenean vehicula elit non risus varius hendrerit. Ut non purus eros. Phasellus tempor turpis ut feugiat bibendum. In lorem nulla, efficitur ac eleifend vitae, gravida quis neque. Vivamus commodo metus lobortis posuere efficitur. Integer vitae est ut nisi sollicitudin facilisis.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Nulla elementum, mi vel eleifend congue, quam tortor euismod nisl, interdum euismod leo tortor ac risus. Suspendisse lobortis elit orci, et blandit nulla scelerisque vitae. Cras pretium volutpat dignissim. Mauris nec vehicula arcu. Nunc feugiat magna ante. Etiam eget consequat nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae nisi quis nisi fermentum sollicitudin. Nam viverra fermentum sapien in aliquet. In vitae elit sed nulla efficitur bibendum ut ac magna. Nunc ex augue, hendrerit auctor tortor id, pulvinar commodo turpis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEPARADOR -->
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent my-12"></div>
+
+        <!-- SECCIÓ 3: DARRERES NOTÍCIES (BUIDA) -->
+        <section id="noticies" class="scroll-mt-24">
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">Darreres Notícies</h2>
+            <!-- Secció buida preparada per a contingut futur -->
+        </section>
+
+        <!-- SEPARADOR -->
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent my-12"></div>
+
+        <!-- SECCIÓ 4: GOOGLE SHEETS EMBED (EL REBOST EN DIRECTE) -->
+        <section id="rebost" class="scroll-mt-24">
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">Enviaments de F O R M U L A R I</h2>
+            <p class="text-sm text-gray-400 mb-6">
+                Aquí apareixen a l'instant totes les perles que aneu enviant, abans que s'estructurin oficialment a les seccions superiors:
+            </p>
+            
+            <div class="w-full bg-white/5 border border-gold/20 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm p-2 sm:p-4">
+                <iframe id="sheets-iframe" class="w-full h-[450px] sm:h-[550px] rounded-lg bg-transparent" frameborder="0"></iframe>
+            </div>
+        </section>
+
+        <!-- SEPARADOR -->
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent my-12"></div>
+
+        <!-- SECCIÓ 5: GOOGLE FORMS (CTA STYLE) -->
+        <section id="propostes" class="scroll-mt-24 text-center bg-white/5 p-6 sm:p-8 rounded-xl border border-gold/10 backdrop-blur-sm">
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide mb-4">Afegeix un tip!</h2>
+            <p class="text-sm text-gray-400 mb-6 max-w-md mx-auto">
+                Ha sorgit algun tip nou que no s'ha recollit aquí? Envia'l directament per poder-lo afegir a la llista.
+            </p>
+            <p class="text-sm text-gray-400 mb-6 max-w-md mx-auto">
+                També qualsevol notícia o cosa que vulguis compartir.
+            </p>
+            
+            <a id="google-form-btn" href="#" target="_blank" class="inline-block w-full sm:w-auto bg-gold hover:bg-gold-hover text-[#121212] font-black py-3.5 px-8 rounded-lg transition-all uppercase text-xs sm:text-sm tracking-widest shadow-lg shadow-gold/20 hover:scale-[1.02]">
+                🚀 Enviar Tip
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-12 text-xs text-gray-500 border-t border-white/5 mt-12 bg-black/20">
+        <p>© 2026. Com diu el T I P 41, no compartir els tips a la gent de fora</p>
+    </footer>
+
+</body>
+</html>
