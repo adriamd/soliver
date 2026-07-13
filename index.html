@@ -37,7 +37,7 @@
             }
         });
     </script>
-    <style>
+    <style type="text/tailwindcss">
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -62,8 +62,8 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#121212]/85 backdrop-blur-md border-b border-gold">
         <nav class="max-w-4xl mx-auto px-4 py-4">
             <ul class="flex justify-start sm:justify-center items-center gap-6 overflow-x-auto whitespace-nowrap no-scrollbar text-xs sm:text-sm font-bold uppercase tracking-wider">
-                <li><a href="#tips" class="hover:text-gold transition-colors">Els Tips</a></li>
-                <li><a href="#paraboles" class="hover:text-gold transition-colors">Les Paràboles</a></li>
+                <li><a href="#tips" class="hover:text-gold transition-colors">Tips</a></li>
+                <li><a href="#paraboles" class="hover:text-gold transition-colors">Paràboles</a></li>
                 <li><a href="#noticies" class="hover:text-gold transition-colors">Darreres Notícies</a></li>
                 <li><a href="#rebost" class="hover:text-gold transition-colors">Enviaments</a></li>
                 <li><a href="#propostes" class="hover:text-gold transition-colors">Enviar Tip</a></li>
@@ -85,7 +85,7 @@
 
         <!-- SECCIÓ 1: ELS TIPS -->
         <section id="tips" class="scroll-mt-24">
-            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">Els Tips</h2>
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">T I P S</h2>
             
             <div class="grid grid-cols-1 gap-4">
                 
@@ -437,6 +437,25 @@
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
+                <div class="tip-card">
+                    <p><span class="tip-number">#59:</span>El camí fàcil va a la perdició</p>
+                    <p class="tip-subtext">no podem caure en paranys que ens volen enredar i ens volen fer veure garses per perdius</p>
+                </div>
+
+                <div class="tip-card">
+                    <p><span class="tip-number">#60:</span>Per aconseguir nòvia: primer pas, convertir-te en un Rei; segon pas, construir el teu Regne; tercer pas, la teva Reina arriba; nova creença per l'Amor</p>
+                </div>
+
+                <!-- TEMPLATE
+                <div class="tip-card">
+                    <p><span class="tip-number">#:</span>tip</p>
+                    <p class="tip-subtext">x</p>
+                </div>
+                <div class="tip-card">
+                    <p><span class="tip-number">#:</span>tip</p>
+                </div>
+                -->
+
             </div>
         </section>
 
@@ -445,7 +464,9 @@
 
         <!-- SECCIÓ 2: LES PARÀBOLES -->
         <section id="paraboles" class="scroll-mt-24 space-y-6">
-            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">Les Paràboles del Mentor</h2>
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">P A R À B O L E S</h2>
+
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">A continuació les paràboles del mentor. Aquestes històries són exemples de com aplicar els nostres principis en situacions de la vida real.</p>
             
             <div class="space-y-6">
                 <div>
@@ -467,7 +488,7 @@
 
         <!-- SECCIÓ 3: DARRERES NOTÍCIES (BUIDA) -->
         <section id="noticies" class="scroll-mt-24">
-            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">Darreres Notícies</h2>
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">D A R R E R E S &nbsp; &nbsp; N O T Í C I E S</h2>
             <!-- Secció buida preparada per a contingut futur -->
         </section>
 
@@ -476,7 +497,7 @@
 
         <!-- SECCIÓ 4: GOOGLE SHEETS EMBED (EL REBOST EN DIRECTE) -->
         <section id="rebost" class="scroll-mt-24">
-            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">Enviaments de F O R M U L A R I</h2>
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">E N V I A M E N T S &nbsp; &nbsp; D E &nbsp; &nbsp;F O R M U L A R I</h2>
             <p class="text-sm text-gray-400 mb-6">
                 Aquí apareixen a l'instant totes les perles que aneu enviant, abans que s'estructurin oficialment a les seccions superiors:
             </p>
