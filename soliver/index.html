@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ca" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G R U P&nbsp;&nbsp;&nbsp;D ' E L I T</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
     <script>
-        // CONFIGURACIÓ DE LES TEVES VARIABLES
-        const FORM_ID = "1FAIpQLScLCcVzZvp5f-2fWiC3g65QW_zl0O3PpRcZbmpMFojIy27bAQ";
-        const SHEETS_ID = "1E3I4OtOQGujvPEfcezXyeMtk5Y1uI4QVOJ2-3F9AEM8";
-
         tailwind.config = {
             theme: {
                 extend: {
@@ -24,18 +23,6 @@
                 }
             }
         }
-
-        // Injecció dinàmica d'enllaços al carregar la pàgina
-        window.addEventListener('DOMContentLoaded', () => {
-            const formBtn = document.getElementById('google-form-btn');
-            if (formBtn) {
-                formBtn.href = `https://docs.google.com/forms/d/e/${FORM_ID}/viewform`;
-            }
-            const sheetsIframe = document.getElementById('sheets-iframe');
-            if (sheetsIframe) {
-                sheetsIframe.src = `https://docs.google.com/spreadsheets/d/${SHEETS_ID}/`;
-            }
-        });
     </script>
     <style type="text/tailwindcss">
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -53,6 +40,7 @@
         }
     </style>
 </head>
+
 <body class="bg-[#121212] text-gray-100 font-sans antialiased pt-20">
 
     <!-- Imatge de fons difuminada i transparent -->
@@ -61,10 +49,11 @@
     <!-- NAVBAR: Scroll horitzontal amagat en mòbils -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#121212]/85 backdrop-blur-md border-b border-gold">
         <nav class="max-w-4xl mx-auto px-4 py-4">
-            <ul class="flex justify-start sm:justify-center items-center gap-6 overflow-x-auto whitespace-nowrap no-scrollbar text-xs sm:text-sm font-bold uppercase tracking-wider">
+            <ul
+                class="flex justify-start sm:justify-center items-center gap-6 overflow-x-auto whitespace-nowrap no-scrollbar text-xs sm:text-sm font-bold uppercase tracking-wider">
                 <li><a href="#tips" class="hover:text-gold transition-colors">Tips</a></li>
                 <li><a href="#paraboles" class="hover:text-gold transition-colors">Paràboles</a></li>
-                <li><a href="#noticies" class="hover:text-gold transition-colors">Darreres Notícies</a></li>
+                <li><a href="#noticies" class="hover:text-gold transition-colors">Darreres notícies</a></li>
                 <!--<li><a href="#rebost" class="hover:text-gold transition-colors">Enviaments</a></li>
                 <li><a href="#propostes" class="hover:text-gold transition-colors">Enviar Tip</a></li> -->
             </ul>
@@ -73,11 +62,13 @@
 
     <!-- CONTENIDOR PRINCIPAL -->
     <main class="max-w-3xl mx-auto px-6 py-8">
-        
+
         <!-- HERO SECTION -->
         <header class="text-center py-12 sm:py-16">
-            <h1 class="text-3xl sm:text-5xl font-black text-gold uppercase tracking-tight mb-4">G R U P&nbsp;&nbsp;&nbsp;D ' E L I T</h1>
-            <p class="text-sm sm:text-lg italic text-gray-400">"només per ús intern del grup d'elit, no compartir amb els de fora"</p>
+            <h1 class="text-3xl sm:text-5xl font-black text-gold uppercase tracking-tight mb-4">G R U
+                P&nbsp;&nbsp;&nbsp;D ' E L I T</h1>
+            <p class="text-sm sm:text-lg italic text-gray-400">"només per ús intern del grup d'elit, no compartir amb
+                els de fora"</p>
         </header>
 
         <!-- SEPARADOR -->
@@ -85,10 +76,22 @@
 
         <!-- SECCIÓ 1: ELS TIPS -->
         <section id="tips" class="scroll-mt-24">
-            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">T I P S</h2>
-            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 m-0">T
+                    I P S</h2>
+                <button id="btn-export-tips-pdf"
+                    class="flex items-center gap-2 bg-gold/10 hover:bg-gold/20 text-gold border border-gold/30 px-4 py-2 rounded-lg font-semibold transition-all backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Exportar a PDF
+                </button>
+            </div>
+
             <div class="grid grid-cols-1 gap-4">
-                
+
                 <!-- Tip 1 -->
                 <div class="tip-card">
                     <p><span class="tip-number">#1:</span> El que és fàcil de fer és fàcil de no fer</p>
@@ -103,8 +106,11 @@
 
                 <!-- Tip 3 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#3:</span> El grup d'èlit és una pinya, un equip, sense diferències entre companys</p>
-                    <p class="tip-subtext">Nosaltres no som Hisenda, tothom ha de tenir les mateixes oportunitats, per tant tots hem de pagar el mateix, sinó tindrem diferències al grup, que porten a enemistats i mals rotllos.</p>
+                    <p><span class="tip-number">#3:</span> El grup d'èlit és una pinya, un equip, sense diferències
+                        entre companys</p>
+                    <p class="tip-subtext">Nosaltres no som Hisenda, tothom ha de tenir les mateixes oportunitats, per
+                        tant tots hem de pagar el mateix, sinó tindrem diferències al grup, que porten a enemistats i
+                        mals rotllos.</p>
                 </div>
 
                 <!-- Tip 4 -->
@@ -206,7 +212,8 @@
 
                 <!-- Tip 20 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#20:</span> la queixa és pobresa, no ens podem queixar, els gats bruts es renten a casa</p>
+                    <p><span class="tip-number">#20:</span> la queixa és pobresa, no ens podem queixar, els gats bruts
+                        es renten a casa</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
@@ -219,7 +226,8 @@
                 <!-- Tip 22 -->
                 <div class="tip-card">
                     <p><span class="tip-number">#22:</span>Negativitat zero prohibit divieto</p>
-                    <p class="tip-subtext">Tot positiu, els comentaris negatius fan abaixar la moral del grup d'alt rendiment</p>
+                    <p class="tip-subtext">Tot positiu, els comentaris negatius fan abaixar la moral del grup d'alt
+                        rendiment</p>
                 </div>
 
                 <!-- Tip 23 -->
@@ -266,13 +274,15 @@
 
                 <!-- Tip 30 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#30:</span> mediocre és el que medio cree i nosaltres creiem del todo</p>
+                    <p><span class="tip-number">#30:</span> mediocre és el que medio cree i nosaltres creiem del todo
+                    </p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
                 <!-- Tip 31 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#31:</span> si no pots dormir, has de meditar i visualitzar que el que vols aconseguir ja ho tens</p>
+                    <p><span class="tip-number">#31:</span> si no pots dormir, has de meditar i visualitzar que el que
+                        vols aconseguir ja ho tens</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
@@ -290,7 +300,8 @@
 
                 <!-- Tip 34 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#34:</span> hem d'estar oberts de ment i no tancar-nos a la programació que tenim davant</p>
+                    <p><span class="tip-number">#34:</span> hem d'estar oberts de ment i no tancar-nos a la programació
+                        que tenim davant</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
@@ -308,20 +319,25 @@
 
                 <!-- Tip 37 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#37:</span> només visualitzant no s'aconsegueixen les coses, si no actuem no prosperarem</p>
+                    <p><span class="tip-number">#37:</span> només visualitzant no s'aconsegueixen les coses, si no
+                        actuem no prosperarem</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
                 <!-- Tip 38 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#38:</span> amb diners es poden fer moltes coses: si ets dolent faràs coses dolentes i si ets bo, coses bones</p>
+                    <p><span class="tip-number">#38:</span> amb diners es poden fer moltes coses: si ets dolent faràs
+                        coses dolentes i si ets bo, coses bones</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
                 <!-- Tip 39 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#39:</span> al fer la masturbació s'ha de pensar en positiu, és una energia positiva per assolir els reptes i unir aquesta sensació de clímax o éxtasi amb la idea d'aconseguir el que volem, aleshores és bo</p>
-                    <p class="tip-subtext">En principi seria un distractor i intentar evitar-la, però en tot cas si no hi ha més remei, pensar en positiu</p>
+                    <p><span class="tip-number">#39:</span> al fer la masturbació s'ha de pensar en positiu, és una
+                        energia positiva per assolir els reptes i unir aquesta sensació de clímax o éxtasi amb la idea
+                        d'aconseguir el que volem, aleshores és bo</p>
+                    <p class="tip-subtext">En principi seria un distractor i intentar evitar-la, però en tot cas si no
+                        hi ha més remei, pensar en positiu</p>
                 </div>
 
                 <!-- Tip 40 -->
@@ -332,7 +348,8 @@
 
                 <!-- Tip 41 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#41:</span> no compartir els coneixements ni els tips a la gent de fora, s'ha de demostrar amb fets, si no hi ha resultats millor callar</p>
+                    <p><span class="tip-number">#41:</span> no compartir els coneixements ni els tips a la gent de fora,
+                        s'ha de demostrar amb fets, si no hi ha resultats millor callar</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
@@ -344,31 +361,36 @@
 
                 <!-- Tip 43 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#43:</span> millor ser treballador i tenir èxit, que un mediocre i un mort de gana</p>
+                    <p><span class="tip-number">#43:</span> millor ser treballador i tenir èxit, que un mediocre i un
+                        mort de gana</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
                 <!-- Tip 44 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#44:</span> Viure de les loteries és de perdedors, ha de ser alguna cosa que puguem controlar. I en cas que guanyis, el que aviat arriba, aviat se'n va</p>
+                    <p><span class="tip-number">#44:</span> Viure de les loteries és de perdedors, ha de ser alguna cosa
+                        que puguem controlar. I en cas que guanyis, el que aviat arriba, aviat se'n va</p>
                     <p class="tip-subtext">Als jocs d'atzar només hi juga la gent pobra i només hi guanya el govern</p>
                 </div>
 
                 <!-- Tip 45 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#45:</span> un guanyador és un perdedor que s'ha aixecat i ho ha tornat a intentar una altra vegada</p>
+                    <p><span class="tip-number">#45:</span> un guanyador és un perdedor que s'ha aixecat i ho ha tornat
+                        a intentar una altra vegada</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
                 <!-- Tip 46 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#46:</span> allà on poses l'atenció, l'energia creix i amb cela et converteixes</p>
+                    <p><span class="tip-number">#46:</span> allà on poses l'atenció, l'energia creix i amb cela et
+                        converteixes</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
                 <!-- Tip 47 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#47:</span> només perd el que abandona, el joc no s'acaba fins que jo guanyi</p>
+                    <p><span class="tip-number">#47:</span> només perd el que abandona, el joc no s'acaba fins que jo
+                        guanyi</p>
                     <p class="tip-subtext">Abandonar és fracassar</p>
                 </div>
 
@@ -392,7 +414,8 @@
 
                 <!-- Tip 51 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#51:</span> com que som estoics, la incomoditat és la meva zona de confort</p>
+                    <p><span class="tip-number">#51:</span> com que som estoics, la incomoditat és la meva zona de
+                        confort</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
@@ -404,8 +427,9 @@
                 <!-- Tip 53 -->
                 <div class="tip-card">
                     <p><span class="tip-number">#53:</span> Jo sóc del 1%</p>
-                    <p class="tip-subtext">El 99% és un ramat de bens que diuen eeehh bee beee beee i que fan el que diu el govern i la tele i no pensen per ells</p>
-                    
+                    <p class="tip-subtext">El 99% és un ramat de bens que diuen eeehh bee beee beee i que fan el que diu
+                        el govern i la tele i no pensen per ells</p>
+
                 </div>
 
                 <!-- Tip 54 -->
@@ -422,34 +446,40 @@
 
                 <!-- Tip 56 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#56:</span> Els tips s'han d'interioritzar, fer-los un estil de vida nostra per pujar de nivell</p>
+                    <p><span class="tip-number">#56:</span> Els tips s'han d'interioritzar, fer-los un estil de vida
+                        nostra per pujar de nivell</p>
                     <p class="tip-subtext">Només sentir-los o llegir-los si no els apliquem no serveix per res</p>
                 </div>
 
                 <!-- Tip 57 -->
                 <div class="tip-card">
                     <p><span class="tip-number">#57:</span>crec que quelcom meravellós em passarà avui</p>
-                    <p class="tip-subtext">Un mantra que ens hem de repetir cada dia quan ens llevem i abans d'anar a dormir. Frase del Brian Tracy, un mentor que ara ja està jubilat o mort</p>
+                    <p class="tip-subtext">Un mantra que ens hem de repetir cada dia quan ens llevem i abans d'anar a
+                        dormir. Frase del Brian Tracy, un mentor que ara ja està jubilat o mort</p>
                 </div>
-                
+
                 <!-- Tip 58 -->
                 <div class="tip-card">
-                    <p><span class="tip-number">#58:</span> cada dia dutxa amb aigua freda: serveix per posar-se incòmode i el codi reacciona per anar prosperant i ser més fort i superar els obstacles</p>
+                    <p><span class="tip-number">#58:</span> cada dia dutxa amb aigua freda: serveix per posar-se
+                        incòmode i el codi reacciona per anar prosperant i ser més fort i superar els obstacles</p>
                     <!-- <p class="tip-subtext">Breu explicació secundària</p> -->
                 </div>
 
                 <div class="tip-card">
                     <p><span class="tip-number">#59:</span>El camí fàcil va a la perdició</p>
-                    <p class="tip-subtext">no podem caure en paranys que ens volen enredar i ens volen fer veure garses per perdius</p>
+                    <p class="tip-subtext">no podem caure en paranys que ens volen enredar i ens volen fer veure garses
+                        per perdius</p>
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#60:</span>Per aconseguir nòvia: primer pas, convertir-te en un Rei; segon pas, construir el teu Regne; tercer pas, la teva Reina arriba; nova creença per l'Amor</p>
+                    <p><span class="tip-number">#60:</span>Per aconseguir nòvia: primer pas, convertir-te en un Rei;
+                        segon pas, construir el teu Regne; tercer pas, la teva Reina arriba; nova creença per l'Amor</p>
                 </div>
 
                 <div class="tip-card">
                     <p><span class="tip-number">#61:</span>L'Amor es una Energia. Com la Salut o els Diners</p>
-                    <p class="tip-subtext">Si vibres alt, tindràs més de totes aquestes energies i la teva pujarà fins a on la teva mentalitat et deixi</p>
+                    <p class="tip-subtext">Si vibres alt, tindràs més de totes aquestes energies i la teva pujarà fins a
+                        on la teva mentalitat et deixi</p>
                 </div>
 
                 <div class="tip-card">
@@ -457,17 +487,21 @@
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#63:</span>La vida m'ha ensenyat que molts psicòlegs es fan psicòlegs perquè ells mateixos no estan bé</p>
+                    <p><span class="tip-number">#63:</span>La vida m'ha ensenyat que molts psicòlegs es fan psicòlegs
+                        perquè ells mateixos no estan bé</p>
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#64:</span>El passat serveix d'experiència i per no tornar-hi i hem de tenir el focus en el nostre futur molt millor que el passat i fent servir la AMI</p>
+                    <p><span class="tip-number">#64:</span>El passat serveix d'experiència i per no tornar-hi i hem de
+                        tenir el focus en el nostre futur molt millor que el passat i fent servir la AMI</p>
                     <p class="tip-subtext">AMI: Acció Massiva Imparable</p>
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#65:</span>Les xarxes les hem de fer servir per nosaltres, no que les xarxes ens utilitzin a nosaltres</p>
-                    <p class="tip-subtext">Per mirar algun tema concret que ens serveixi per crèixer mentalment i "poscats" interessants, veure pàgines de meuques no serveix per res, sinó ens dominen</p>
+                    <p><span class="tip-number">#65:</span>Les xarxes les hem de fer servir per nosaltres, no que les
+                        xarxes ens utilitzin a nosaltres</p>
+                    <p class="tip-subtext">Per mirar algun tema concret que ens serveixi per crèixer mentalment i
+                        "poscats" interessants, veure pàgines de meuques no serveix per res, sinó ens dominen</p>
                 </div>
 
                 <div class="tip-card">
@@ -476,23 +510,30 @@
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#67:</span>L'univers fa sempre la seva part i ens hem de centrar en el futur</p>
-                    <p class="tip-subtext">Si ens anclem al passat, no prosperarem, estarem amb la moral baixa i ens estafaran sempre</p>
+                    <p><span class="tip-number">#67:</span>L'univers fa sempre la seva part i ens hem de centrar en el
+                        futur</p>
+                    <p class="tip-subtext">Si ens anclem al passat, no prosperarem, estarem amb la moral baixa i ens
+                        estafaran sempre</p>
                 </div>
 
                 <div class="tip-card">
                     <p><span class="tip-number">#68:</span>L'1% no necessita vacances</p>
-                    <p class="tip-subtext">Les vacances les fa la gent del 99% perquè treballen en feines que no els agraden, no estan bé a casa, s'avorreixen tot el sant dia i s'han de distreure i amb això estan feliçps</p>
+                    <p class="tip-subtext">Les vacances les fa la gent del 99% perquè treballen en feines que no els
+                        agraden, no estan bé a casa, s'avorreixen tot el sant dia i s'han de distreure i amb això estan
+                        feliçps</p>
                 </div>
 
                 <div class="tip-card">
                     <p><span class="tip-number">#69:</span>Si canviem la nostra programació, canviem el nostre destí</p>
-                    <p class="tip-subtext">Des que naixem, primer els pares ens diuen el que els han dit els seus pares, després els mestres de l'escola i els programes de televisió (per això es diuen programes) que volen un ramat de bens fàcil de dominar</p>
+                    <p class="tip-subtext">Des que naixem, primer els pares ens diuen el que els han dit els seus pares,
+                        després els mestres de l'escola i els programes de televisió (per això es diuen programes) que
+                        volen un ramat de bens fàcil de dominar</p>
                 </div>
 
                 <div class="tip-card">
                     <p><span class="tip-number">#70:</span>El cansanci és mental</p>
-                    <p class="tip-subtext">El cos t'avisa quan estàs al 80-90% ddel que pots arribar a fer, però tenim un 10-20% més de rendiment que podem donar</p>
+                    <p class="tip-subtext">El cos t'avisa quan estàs al 80-90% ddel que pots arribar a fer, però tenim
+                        un 10-20% més de rendiment que podem donar</p>
                 </div>
 
                 <div class="tip-card">
@@ -510,12 +551,14 @@
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#74:</span>Quan crec que no puc, aleshores dec, i si no trobo la manera, la crec!! i sino me la invento.!! 👍💰💰💰💰</p>
+                    <p><span class="tip-number">#74:</span>Quan crec que no puc, aleshores dec, i si no trobo la manera,
+                        la crec!! i sino me la invento.!! 👍💰💰💰💰</p>
                 </div>
 
                 <div class="tip-card">
                     <p><span class="tip-number">#75:</span>No has de caçar papallones, les has d'atreure</p>
-                    <p class="tip-subtext">Has de ser el número 1 per atreure persones número 1, no pots anar caçant així al atzar pel carrer</p>
+                    <p class="tip-subtext">Has de ser el número 1 per atreure persones número 1, no pots anar caçant
+                        així al atzar pel carrer</p>
                 </div>
 
                 <div class="tip-card">
@@ -524,16 +567,20 @@
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#77:</span>S'ha de tenir paciència, qui té paciència domina la ment i domina el món</p>
+                    <p><span class="tip-number">#77:</span>S'ha de tenir paciència, qui té paciència domina la ment i
+                        domina el món</p>
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#78:</span>Estàs parlant amb una persona i s'esvera, et crida i t'insulta: tu, callat, escoltes estoicament i el desarmes totalment </p>
-                    <p class="tip-subtext">Si no te'n surts, abans de dir res compta fins a 3 i el pensament se n'ha anat</p>
+                    <p><span class="tip-number">#78:</span>Estàs parlant amb una persona i s'esvera, et crida i
+                        t'insulta: tu, callat, escoltes estoicament i el desarmes totalment </p>
+                    <p class="tip-subtext">Si no te'n surts, abans de dir res compta fins a 3 i el pensament se n'ha
+                        anat</p>
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#79:</span>En la transacció econòmica està la transformació de la persona</p>
+                    <p><span class="tip-number">#79:</span>En la transacció econòmica està la transformació de la
+                        persona</p>
                 </div>
 
                 <div class="tip-card">
@@ -546,7 +593,8 @@
 
                 <div class="tip-card">
                     <p><span class="tip-number">#82:</span>Vibracions superiors dominen a les inferiors</p>
-                    <p class="tip-subtext">Per tant, és qüestió de negociar amb la teva parella i arribar a un pacte consensuat entre ambdós</p>
+                    <p class="tip-subtext">Per tant, és qüestió de negociar amb la teva parella i arribar a un pacte
+                        consensuat entre ambdós</p>
                 </div>
 
                 <div class="tip-card">
@@ -554,27 +602,32 @@
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#84:</span>Ser agraïts amb la vida, ajudar al màxim de gent possible i sembrar amor, i si fem tot això, la vida ens torna coses bones.</p>
+                    <p><span class="tip-number">#84:</span>Ser agraïts amb la vida, ajudar al màxim de gent possible i
+                        sembrar amor, i si fem tot això, la vida ens torna coses bones.</p>
                 </div>
-                
+
                 <div class="tip-card">
                     <p><span class="tip-number">#85:</span>Als diners els agrada la velocitat</p>
-                    <p class="tip-subtext">Hem de moure els diners el més ràpid que puguem, fer factures ràpid, cobrar ràpid. És com una bola de neu i, com més ràpid, tot va millor.</p>
+                    <p class="tip-subtext">Hem de moure els diners el més ràpid que puguem, fer factures ràpid, cobrar
+                        ràpid. És com una bola de neu i, com més ràpid, tot va millor.</p>
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#86:</span>Fer-ho ja! El més aviat que puguem, no podem esperar temps</p>
+                    <p><span class="tip-number">#86:</span>Fer-ho ja! El més aviat que puguem, no podem esperar temps
+                    </p>
                 </div>
 
                 <div class="tip-card">
-                    <p><span class="tip-number">#87:</span>Qui té paciència domina la seva ment, i el que domina la seva ment domina la seva vida, i el que domina la seva vida arriba al seu propòsit de vida.</p>
+                    <p><span class="tip-number">#87:</span>Qui té paciència domina la seva ment, i el que domina la seva
+                        ment domina la seva vida, i el que domina la seva vida arriba al seu propòsit de vida.</p>
                 </div>
 
                 <div class="tip-card">
                     <p><span class="tip-number">#88:</span>Té més raó el cor que la ment.</p>
                     <p class="tip-subtext">
                         D'aquí ve la paraula <span class="not-italic">corazonada</span>.
-                        Una <span class="not-italic">corazonada</span> és millor que la ment, en general, perquè una <span class="not-italic">corazonada</span> és un sentiment que sents al moment i l'apliques
+                        Una <span class="not-italic">corazonada</span> és millor que la ment, en general, perquè una
+                        <span class="not-italic">corazonada</span> és un sentiment que sents al moment i l'apliques
                         i la ment et vol mantenir a la zona de confort, comences a raonar i et paralitza.
                     </p>
                 </div>
@@ -584,12 +637,12 @@
                     <p class="tip-subtext">Si et penses una cosa massa temps, al final no ho fas.</p>
                 </div>
 
-                
+
                 <!-- altres coses que ha comentat abans:
                     hem de ser la elite de la elite
                 -->
 
-                
+
 
                 <!-- TEMPLATE
                 <div class="tip-card">
@@ -609,21 +662,56 @@
 
         <!-- SECCIÓ 2: LES PARÀBOLES -->
         <section id="paraboles" class="scroll-mt-24 space-y-6">
-            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">P A R À B O L E S</h2>
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-8">P A R
+                À B O L E S</h2>
 
-            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">A continuació les paràboles del sensei. Aquestes històries són exemples de com aplicar els nostres principis en situacions de la vida real.</p>
-            
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">A continuació les paràboles del sensei.
+                Aquestes històries són exemples de com aplicar els nostres principis en situacions de la vida real.</p>
+
             <div class="space-y-6">
                 <div>
                     <h3 class="text-xl font-bold text-white mb-2">Els taurons japonesos</h3>
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo tempor sem non bibendum. Sed nec metus vestibulum nisi rhoncus tincidunt. Mauris ultricies nibh odio, sed varius diam convallis vel. Mauris posuere ultricies lobortis. Integer nisl urna, congue eu lacinia nec, tempor vel ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed urna tortor, maximus vitae odio vel, luctus rhoncus nisl. Fusce blandit est et libero finibus malesuada. Phasellus euismod augue et erat tincidunt, sed porttitor sem placerat. Nulla rhoncus aliquam velit eu hendrerit. Proin justo tortor, aliquet vitae viverra non, gravida non augue. Cras euismod scelerisque metus, non commodo enim egestas nec.</p>
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Proin tortor turpis, tristique non consequat sit amet, consequat non nunc. Sed nec nisl vel urna maximus ornare eu non leo. Aliquam gravida malesuada nisi, at consequat tortor laoreet eget. Donec ut blandit velit. Ut in placerat risus. Duis commodo, orci in imperdiet finibus, purus ligula auctor ex, ac maximus diam turpis ac leo. Mauris mattis odio dui, in cursus nunc mollis sed. Sed non volutpat erat. Cras eu accumsan tellus, at suscipit lacus.</p>
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Nulla elementum, mi vel eleifend congue, quam tortor euismod nisl, interdum euismod leo tortor ac risus. Suspendisse lobortis elit orci, et blandit nulla scelerisque vitae. Cras pretium volutpat dignissim. Mauris nec vehicula arcu. Nunc feugiat magna ante. Etiam eget consequat nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae nisi quis nisi fermentum sollicitudin. Nam viverra fermentum sapien in aliquet. In vitae elit sed nulla efficitur bibendum ut ac magna. Nunc ex augue, hendrerit auctor tortor id, pulvinar commodo turpis.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Mauris commodo tempor sem non bibendum. Sed nec metus vestibulum
+                        nisi rhoncus tincidunt. Mauris ultricies nibh odio, sed varius diam convallis vel. Mauris
+                        posuere ultricies lobortis. Integer nisl urna, congue eu lacinia nec, tempor vel ligula.
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Sed urna tortor, maximus vitae odio vel, luctus rhoncus nisl. Fusce blandit est et libero
+                        finibus malesuada. Phasellus euismod augue et erat tincidunt, sed porttitor sem placerat. Nulla
+                        rhoncus aliquam velit eu hendrerit. Proin justo tortor, aliquet vitae viverra non, gravida non
+                        augue. Cras euismod scelerisque metus, non commodo enim egestas nec.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Proin tortor turpis, tristique non
+                        consequat sit amet, consequat non nunc. Sed nec nisl vel urna maximus ornare eu non leo. Aliquam
+                        gravida malesuada nisi, at consequat tortor laoreet eget. Donec ut blandit velit. Ut in placerat
+                        risus. Duis commodo, orci in imperdiet finibus, purus ligula auctor ex, ac maximus diam turpis
+                        ac leo. Mauris mattis odio dui, in cursus nunc mollis sed. Sed non volutpat erat. Cras eu
+                        accumsan tellus, at suscipit lacus.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Nulla elementum, mi vel eleifend
+                        congue, quam tortor euismod nisl, interdum euismod leo tortor ac risus. Suspendisse lobortis
+                        elit orci, et blandit nulla scelerisque vitae. Cras pretium volutpat dignissim. Mauris nec
+                        vehicula arcu. Nunc feugiat magna ante. Etiam eget consequat nulla. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Praesent vitae nisi quis nisi fermentum sollicitudin. Nam viverra
+                        fermentum sapien in aliquet. In vitae elit sed nulla efficitur bibendum ut ac magna. Nunc ex
+                        augue, hendrerit auctor tortor id, pulvinar commodo turpis.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold text-white mb-2">El làser i la llanterna</h3>
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Sed laoreet augue eget facilisis ullamcorper. Praesent euismod lectus a quam pellentesque porttitor. Fusce ultricies ullamcorper enim non lacinia. Aenean consequat nisl leo. Vivamus porta venenatis risus, ac maximus libero dignissim sed. Fusce diam ante, porttitor in aliquam et, efficitur et nunc. Praesent dui massa, porttitor nec ipsum ut, rutrum iaculis lorem. Cras consectetur tincidunt erat, quis efficitur lacus rutrum ut. Aenean massa sem, pharetra et viverra id, vestibulum ut libero. Aenean vehicula elit non risus varius hendrerit. Ut non purus eros. Phasellus tempor turpis ut feugiat bibendum. In lorem nulla, efficitur ac eleifend vitae, gravida quis neque. Vivamus commodo metus lobortis posuere efficitur. Integer vitae est ut nisi sollicitudin facilisis.</p>
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Nulla elementum, mi vel eleifend congue, quam tortor euismod nisl, interdum euismod leo tortor ac risus. Suspendisse lobortis elit orci, et blandit nulla scelerisque vitae. Cras pretium volutpat dignissim. Mauris nec vehicula arcu. Nunc feugiat magna ante. Etiam eget consequat nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae nisi quis nisi fermentum sollicitudin. Nam viverra fermentum sapien in aliquet. In vitae elit sed nulla efficitur bibendum ut ac magna. Nunc ex augue, hendrerit auctor tortor id, pulvinar commodo turpis.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Sed laoreet augue eget facilisis
+                        ullamcorper. Praesent euismod lectus a quam pellentesque porttitor. Fusce ultricies ullamcorper
+                        enim non lacinia. Aenean consequat nisl leo. Vivamus porta venenatis risus, ac maximus libero
+                        dignissim sed. Fusce diam ante, porttitor in aliquam et, efficitur et nunc. Praesent dui massa,
+                        porttitor nec ipsum ut, rutrum iaculis lorem. Cras consectetur tincidunt erat, quis efficitur
+                        lacus rutrum ut. Aenean massa sem, pharetra et viverra id, vestibulum ut libero. Aenean vehicula
+                        elit non risus varius hendrerit. Ut non purus eros. Phasellus tempor turpis ut feugiat bibendum.
+                        In lorem nulla, efficitur ac eleifend vitae, gravida quis neque. Vivamus commodo metus lobortis
+                        posuere efficitur. Integer vitae est ut nisi sollicitudin facilisis.</p>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">Nulla elementum, mi vel eleifend
+                        congue, quam tortor euismod nisl, interdum euismod leo tortor ac risus. Suspendisse lobortis
+                        elit orci, et blandit nulla scelerisque vitae. Cras pretium volutpat dignissim. Mauris nec
+                        vehicula arcu. Nunc feugiat magna ante. Etiam eget consequat nulla. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Praesent vitae nisi quis nisi fermentum sollicitudin. Nam viverra
+                        fermentum sapien in aliquet. In vitae elit sed nulla efficitur bibendum ut ac magna. Nunc ex
+                        augue, hendrerit auctor tortor id, pulvinar commodo turpis.</p>
                 </div>
             </div>
         </section>
@@ -633,12 +721,15 @@
 
         <!-- SECCIÓ 3: DARRERES NOTÍCIES (BUIDA) -->
         <section id="noticies" class="scroll-mt-24">
-            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">D A R R E R E S &nbsp; &nbsp; N O T Í C I E S</h2>
+            <h2 class="text-2xl font-extrabold text-gold uppercase tracking-wide border-l-4 border-gold pl-3 mb-6">D A R
+                R E R E S &nbsp; &nbsp; N O T Í C I E S</h2>
             <!-- Secció buida preparada per a contingut futur -->
-             <p class="text-sm text-gray-400 mb-6">
+            <p class="text-sm text-gray-400 mb-6">
                 No. No mireu les notícies.
             </p>
         </section>
+
+
 
         <!-- aquí hi havia formulari però s'ha tret. mirar fitxer legacy o el git per recuperar-lo -->
 
@@ -650,4 +741,5 @@
     </footer>
 
 </body>
+
 </html>
